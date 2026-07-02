@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
+:root {
+  font-family: "JetBrains Mono", monospace;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+[data-slot="card"] {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+@theme {
+  --color-primaryTextColor: white;
+  --color-primaryBg: #151212;
+  --color-secondaryTextColor: #151212;
+  --color-secondaryBg: white;
+  --color-borderPrimary: #555555;
+  --color-card: #2b2b2b;
+  --color-profit: #22c55e;
+  --color-dkGreen: #14532d;
+  --font-montserrat: "Montserrat", sans-serif;
+}
