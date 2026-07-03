@@ -1,7 +1,18 @@
 import React, { useContext } from "react";
 import { ViewContext } from "../context/ViewContext";
 import { useNavigate } from "react-router";
-import { MoveRight, TrendingUp } from "lucide-react";
+import {
+  Activity,
+  BarChart3,
+  Coins,
+  icons,
+  MoveRight,
+  PieChart,
+  Proportions,
+  Receipt,
+  ShieldCheck,
+  TrendingUp,
+} from "lucide-react";
 import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
 import {
   Card,
@@ -17,7 +28,8 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart";
 import HomeCard from "../components/home/HeroCard";
-import HomeStats from "../components/home/HomeStats";
+import Stats from "../components/home/Stats";
+import Features from "../components/home/Features";
 
 const Home = () => {
   const { darkMode, setDarkMode } = useContext(ViewContext);
@@ -39,6 +51,45 @@ const Home = () => {
     { id: 2, stat: "Portfolios Tracked", suffix: "+", count: 15000 },
     { id: 3, stat: "Asset Classes", suffix: "", count: 5 },
     { id: 4, stat: "Open Source", suffix: "%", count: 100 },
+  ];
+
+  const FEATURES = [
+    {
+      id: 1,
+      name: "Track Stocks",
+      desc: "Real-time stock tracking across all major exchanges — NSE, BSE, and beyond — with live price feeds, daily gain/loss, and portfolio-level performance in one view.",
+      icon: TrendingUp,
+    },
+    {
+      id: 2,
+      name: "Mutual Funds",
+      desc: "Monitor your MF portfolio and SIP performance with NAV tracking, XIRR returns, and a clear breakdown of fund allocation across your holdings.",
+      icon: PieChart,
+    },
+    {
+      id: 3,
+      name: "Commodities",
+      desc: "Track gold, silver, and other commodity investments alongside your equity and MF holdings, with live rates so your net worth stays accurate.",
+      icon: Coins,
+    },
+    {
+      id: 4,
+      name: "XIRR & CAGR Metrics",
+      desc: "Time-weighted XIRR and CAGR on every holding and your total portfolio, not just raw gain/loss — the metric that actually tells you if you're beating a benchmark.",
+      icon: BarChart3,
+    },
+    {
+      id: 5,
+      name: "Real-time Updates",
+      desc: "Live prices and portfolio value updates that refresh automatically, so you're always looking at current numbers, not stale end-of-day data.",
+      icon: Activity,
+    },
+    {
+      id: 6,
+      name: "Tax Computation (LTCG/STCG)",
+      desc: "Automatic LTCG/STCG calculation on every holding, with indexation and the pre-2018 grandfathering clause built in — no manual tax math at filing time.",
+      icon: Receipt,
+    },
   ];
 
   const chartConfig = {
@@ -96,7 +147,20 @@ const Home = () => {
 
       {/* Stats */}
       <div className="w-full h-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 py-12 sm:py-16 md:py-20 lg:py-24 xl:py-30 flex items-center justify-between lg:flex-row">
-        <HomeStats STATS={STATS} />
+        <Stats STATS={STATS} />
+      </div>
+
+      {/* Features */}
+      <div className="w-full h-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 py-12 sm:py-16 md:py-20 lg:py-24 xl:py-30 flex flex-col items-center justify-between gap-12">
+        <div className="w-full flex flex-col items-center justify-center text-center">
+          <h1 className="text-2xl lg:text-4xl font-bold">
+            Everything You Need
+          </h1>
+          <h1 className="text-sm lg:text-lg text-neutral-500 font-bold">
+            One dashboard for all your assets.
+          </h1>
+        </div>
+        <Features FEATURES={FEATURES} />
       </div>
     </>
   );
