@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import { ViewContext } from "../../context/ViewContext";
 
-const HomeStats = ({STATS}) => {
+const Stats = ({STATS}) => {
   const { darkMode, setDarkMode } = useContext(ViewContext);
 
   const dm = darkMode;
@@ -39,4 +39,4 @@ const HomeStats = ({STATS}) => {
   );
 };
 
-export default HomeStats;
+export default Stats;
