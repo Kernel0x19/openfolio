@@ -12,7 +12,7 @@ const AuthLayout = ({ children }) => {
       }`}
     >
       <Navbar />
-      <main className="pt-24 flex items-center justify-center min-h-screen">
+      <main className="pt-24  flex items-center justify-center min-h-screen">
         {children}
       </main>
     </div>

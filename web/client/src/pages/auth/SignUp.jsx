@@ -41,7 +41,7 @@ const SignUp = () => {
 
   return (
     <div
-      className={`w-full max-w-lg rounded-2xl shadow-2xl p-8 flex flex-col gap-5 border transition-colors duration-500
+      className={`w-full max-w-sm rounded-2xl shadow-2xl p-8 flex flex-col gap-5 border transition-colors duration-500
         ${
           dm
             ? "bg-[#1A1A1A] border-white/10 text-white"
@@ -151,11 +151,11 @@ const SignUp = () => {
         className={`text-center text-xs transition-colors duration-500 ${dm ? "text-white/30" : "text-black/30"}`}
       >
         By signing up you agree to our{" "}
-        <span className="text-[#4cc9f0] cursor-pointer hover:underline transition-colors duration-500">
+        <span className="text-profit cursor-pointer hover:underline transition-colors duration-500">
           terms
         </span>{" "}
         and{" "}
-        <span className="text-[#4cc9f0] cursor-pointer hover:underline transition-colors duration-500">
+        <span className="text-profit cursor-pointer hover:underline transition-colors duration-500">
           privacy policy
         </span>
         .
@@ -165,7 +165,7 @@ const SignUp = () => {
       >
         Already tracking?{" "}
         <span
-          className="text-[#4cc9f0] cursor-pointer hover:underline font-medium transition-colors duration-500"
+          className="text-profit cursor-pointer hover:underline font-medium transition-colors duration-500"
           onClick={() => navigate("/auth/login")}
         >
           Log in →

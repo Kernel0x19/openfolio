@@ -64,7 +64,7 @@ const MainLayout = ({ children }) => {
       }`}
     >
       <Navbar links={links} actions={actions} />
-      <main className="pt-24">{children}</main>
+      <main className="pt-32">{children}</main>
       <Footer />
     </div>
   );

@@ -85,7 +85,7 @@ const Login = () => {
       <div className="flex flex-col gap-1.5">
         <div className="flex items-center justify-between">
           <label className={labelClass}>Password</label>
-          <a className="text-xs text-[#4cc9f0] flex items-center gap-0.5 hover:underline cursor-pointer group transition-colors duration-500">
+          <a className="text-xs text-profit flex items-center gap-0.5 hover:underline cursor-pointer group transition-colors duration-500">
             Forgot?
             <ArrowUpRight
               size={12}
@@ -132,7 +132,7 @@ const Login = () => {
         className={`text-center text-xs transition-colors duration-500 ${dm ? "text-white/40" : "text-black/40"}`}
       >
         No account?{" "}
-        <span className="text-[#4cc9f0] cursor-pointer hover:underline font-medium transition-colors duration-500" onClick={() => navigate('/auth/signup')}>
+        <span className="text-profit cursor-pointer hover:underline font-medium transition-colors duration-500" onClick={() => navigate('/auth/signup')}>
           Sign up free →
         </span>
       </p>
