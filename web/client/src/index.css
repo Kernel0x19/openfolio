@@ -2,6 +2,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   font-family: "JetBrains Mono", monospace;
 }
@@ -19,7 +23,7 @@
 
 @theme {
   --color-primaryTextColor: white;
-  --color-primaryBg: #151212;
+  --color-primaryBg: #0D0D0D;
   --color-secondaryTextColor: #151212;
   --color-secondaryBg: white;
   --color-borderPrimary: #555555;
