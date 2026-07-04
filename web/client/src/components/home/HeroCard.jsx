@@ -34,7 +34,7 @@ const HomeCard = () => {
   return (
     <>
       <div className="w-full lg:w-1/2 flex flex-col items-start justify-center gap-3 p-2">
-        <div className="w-full flex flex-col gap-2 px-4 sm:px-5 py-6 sm:py-8 bg-card rounded-lg text-primaryTextColor">
+        <div className="w-full flex flex-col gap-2 px-4 sm:px-5 py-6 sm:py-8 bg-card rounded-lg border-2 border-white/10 text-primaryTextColor">
           <h1 className="text-xs sm:text-sm font-semibold">
             Total Portfolio Value
           </h1>
