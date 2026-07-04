@@ -5,6 +5,7 @@ import {
   Activity,
   BarChart3,
   Coins,
+  Eye,
   icons,
   MoveRight,
   PieChart,
@@ -12,6 +13,8 @@ import {
   Receipt,
   ShieldCheck,
   TrendingUp,
+  GitFork,
+  Ban
 } from "lucide-react";
 import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
 import {
@@ -30,6 +33,7 @@ import {
 import HomeCard from "../components/home/HeroCard";
 import Stats from "../components/home/Stats";
 import Features from "../components/home/Features";
+import Reasons from "../components/home/Reasons";
 
 const Home = () => {
   const { darkMode, setDarkMode } = useContext(ViewContext);
@@ -92,6 +96,27 @@ const Home = () => {
     },
   ];
 
+  const REASONS = [
+    {
+      id: 1,
+      icon: Eye,
+      title: "Auditable, Not Assumed",
+      desc: "Every line that touches your holdings is public on GitHub, GNU-v3.0 licensed — verify it yourself instead of trusting a black box.",
+    },
+    {
+      id: 2,
+      icon: GitFork,
+      title: "Self-Host Anywhere",
+      desc: "Deploy on your own infrastructure. Any modifications you run as a public service stay open too — that's the GNU guarantee.",
+    },
+    {
+      id: 3,
+      icon: Ban,
+      title: "No Ads, No Data Resale",
+      desc: "Free forever, with no business model that depends on selling your financial behavior to advertisers.",
+    },
+  ];
+
   const chartConfig = {
     stockPrice: {
       label: "Stock Price: ",
@@ -151,7 +176,7 @@ const Home = () => {
       </div>
 
       {/* Features */}
-      <div className="w-full h-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 py-12 sm:py-16 md:py-20 lg:py-24 xl:py-30 flex flex-col items-center justify-between gap-12">
+      <div className="w-full h-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 py-14 sm:py-18 md:py-25 lg:py-30 xl:py-40 flex flex-col items-center justify-between gap-12" id="features">
         <div className="w-full flex flex-col items-center justify-center text-center">
           <h1 className="text-2xl lg:text-4xl font-bold">
             Everything You Need
@@ -161,6 +186,17 @@ const Home = () => {
           </h1>
         </div>
         <Features FEATURES={FEATURES} />
+      </div>
+
+      {/* Reasons */}
+      <div className="w-full h-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 py-14 sm:py-18 md:py-25 lg:py-30 xl:py-40 flex flex-col items-center justify-between gap-12">
+        <div className="w-full flex flex-col items-center justify-center text-center">
+          <h1 className="text-2xl lg:text-4xl font-bold">Why Open Source ?</h1>
+          <h1 className="text-sm lg:text-lg text-neutral-500 font-bold">
+            Your money, your data, your code to verify.
+          </h1>
+        </div>
+        <Reasons REASONS={REASONS} />
       </div>
     </>
   );
