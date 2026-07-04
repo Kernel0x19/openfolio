@@ -15,6 +15,7 @@ import {
   TrendingUp,
   GitFork,
   Ban,
+  Star,
 } from "lucide-react";
 import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
 import {
@@ -225,7 +226,7 @@ const Home = () => {
       </div>
 
       {/* How it Works */}
-      <div className="w-full h-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 py-14 sm:py-18 md:py-25 lg:py-30 xl:py-40 flex flex-col items-center justify-between gap-12">
+      <div className="w-full h-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 py-14 sm:py-18 md:py-25 lg:py-30 xl:py-40 flex flex-col items-center justify-between gap-12" id="how-it-works">
         <div className="w-full flex flex-col items-center justify-center text-center">
           <h1 className="text-2xl lg:text-4xl font-bold">How it works ?</h1>
           <h1 className="text-sm lg:text-lg text-neutral-500 font-bold">
@@ -234,6 +235,90 @@ const Home = () => {
         </div>
         <HowItWorks STEPS={STEPS} />
       </div>
+
+      {/* CTA */}
+      <section
+        className={`w-full h-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 py-8 sm:py-10 md:py-15 lg:py-20 xl:py-30 flex flex-col items-center justify-between gap-12 transition-all duration-500 ${darkMode ? "bg-white text-black" : "bg-card text-white"}`}
+      >
+        <div className="flex flex-col gap-3 relative z-10 transition-all duration-500">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black leading-tight text-center">
+            Your portfolio data
+            <br />
+            <span className="text-profit">belongs to you.</span>
+          </h2>
+          <p
+            className={`text-sm sm:text-base max-w-md mx-auto leading-relaxed text-center transition-colors duration-500
+            ${dm ? "text-black/60" : "text-white/60"}`}
+          >
+            Not to us. Not to advertisers. Not to anyone.
+            <br />
+            Open source, self-hostable, free forever.
+          </p>
+        </div>
+
+        <div className="flex flex-col sm:flex-row items-center gap-3 relative z-10 transition-all duration-500">
+          <button
+            onClick={() => navigate("/auth/signup")}
+            className={`px-6 py-4 rounded-lg text-base font-semibold flex items-center gap-2 group transition-all duration-300 cursor-pointer
+              ${
+                dm
+                  ? "bg-black text-white hover:bg-black/90"
+                  : "bg-white text-black hover:bg-white/90"
+              }`}
+          >
+            Get Started Free
+            <MoveRight
+              size={15}
+              className="group-hover:translate-x-1 transition-transform duration-300"
+            />
+          </button>
+
+          <a
+            href="https://github.com/Kernel0x19/openfolio"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`px-6 py-4 rounded-lg text-base font-semibold flex items-center gap-2 border transition-all duration-300 cursor-pointer
+              ${
+                dm
+                  ? "border-black/15 text-black hover:bg-black/5"
+                  : "border-white/15 text-white hover:bg-white/5 bg-card"
+              }`}
+          >
+            <Star size={15} />
+            Star on GitHub
+          </a>
+        </div>
+        <div
+          className={`flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs relative z-10 transition-colors duration-500
+          ${dm ? "text-black/60" : "text-white/60"}`}
+        >
+          <span className="flex items-center gap-1.5">
+            <span style={{ color: "#22C55E", opacity: 0.6 }}>✓</span>
+            No credit card
+          </span>
+          <span
+            className={`hidden sm:block w-px h-3 ${dm ? "bg-black/40" : "bg-white/40"}`}
+          />
+          <span className="flex items-center gap-1.5">
+            <span style={{ color: "#22C55E", opacity: 0.6 }}>✓</span>
+            GNU v3.0 License
+          </span>
+          <span
+            className={`hidden sm:block w-px h-3 ${dm ? "bg-black/40" : "bg-white/40"}`}
+          />
+          <span className="flex items-center gap-1.5">
+            <span style={{ color: "#22C55E", opacity: 0.6 }}>✓</span>
+            Self-hostable
+          </span>
+          <span
+            className={`hidden sm:block w-px h-3 ${dm ? "bg-black/40" : "bg-white/40"}`}
+          />
+          <span className="flex items-center gap-1.5">
+            <span style={{ color: "#22C55E", opacity: 0.6 }}>✓</span>
+            Free forever
+          </span>
+        </div>
+      </section>
     </>
   );
 };
