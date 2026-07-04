@@ -46,7 +46,7 @@ const Navbar = ({ links = [], actions = null, mobileExtra = null, onLogoClick })
           ${
             scrolled
               ? `rounded-xl sm:rounded-2xl shadow-2xl py-3 sm:py-5 backdrop-blur-md border
-               ${darkMode ? "bg-[#151212]/90 border-white/10" : "bg-white/90 border-black/10"}`
+               ${darkMode ? "bg-primaryBg/80 border-white/10" : "bg-white/90 border-black/10"}`
               : `py-3 sm:py-4 md:py-5 lg:py-6 rounded-none shadow-none border-transparent
                ${darkMode ? "bg-primaryBg" : "bg-secondaryBg"}`
           }`}
