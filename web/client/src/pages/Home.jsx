@@ -14,7 +14,7 @@ import {
   ShieldCheck,
   TrendingUp,
   GitFork,
-  Ban
+  Ban,
 } from "lucide-react";
 import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
 import {
@@ -34,6 +34,7 @@ import HomeCard from "../components/home/HeroCard";
 import Stats from "../components/home/Stats";
 import Features from "../components/home/Features";
 import Reasons from "../components/home/Reasons";
+import HowItWorks from "../components/home/HowItWorks";
 
 const Home = () => {
   const { darkMode, setDarkMode } = useContext(ViewContext);
@@ -117,6 +118,27 @@ const Home = () => {
     },
   ];
 
+  const STEPS = [
+    {
+      number: "01",
+      title: "Connect Your Broker",
+      description:
+        "Download your CAMS or CDSL consolidated account statement and upload it. We parse your entire transaction history in seconds.",
+    },
+    {
+      number: "02",
+      title: "Add Your Assets",
+      description:
+        "Every stock, mutual fund, and commodity appears automatically. Correct any gaps or add assets manually.",
+    },
+    {
+      number: "03",
+      title: "Track Everything Live",
+      description:
+        "Live prices, XIRR, CAGR, and LTCG/STCG — all calculated automatically. Always current, never stale.",
+    },
+  ];
+
   const chartConfig = {
     stockPrice: {
       label: "Stock Price: ",
@@ -171,12 +193,15 @@ const Home = () => {
       </div>
 
       {/* Stats */}
-      <div className="w-full h-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 py-12 sm:py-16 md:py-20 lg:py-24 xl:py-30 flex items-center justify-between lg:flex-row">
+      <div className="w-full h-auto px-8 sm:px-10 md:px-16 lg:px-22 xl:px-35 py-12 sm:py-16 md:py-20 lg:py-24 xl:py-30 flex items-center justify-between lg:flex-row">
         <Stats STATS={STATS} />
       </div>
 
       {/* Features */}
-      <div className="w-full h-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 py-14 sm:py-18 md:py-25 lg:py-30 xl:py-40 flex flex-col items-center justify-between gap-12" id="features">
+      <div
+        className="w-full h-auto px-8 sm:px-10 md:px-16 lg:px-22 xl:px-35 py-14 sm:py-18 md:py-25 lg:py-30 xl:py-40 flex flex-col items-center justify-between gap-12"
+        id="features"
+      >
         <div className="w-full flex flex-col items-center justify-center text-center">
           <h1 className="text-2xl lg:text-4xl font-bold">
             Everything You Need
@@ -189,7 +214,7 @@ const Home = () => {
       </div>
 
       {/* Reasons */}
-      <div className="w-full h-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 py-14 sm:py-18 md:py-25 lg:py-30 xl:py-40 flex flex-col items-center justify-between gap-12">
+      <div className="w-full h-auto px-8 sm:px-10 md:px-16 lg:px-22 xl:px-35 py-14 sm:py-18 md:py-25 lg:py-30 xl:py-40 flex flex-col items-center justify-between gap-12">
         <div className="w-full flex flex-col items-center justify-center text-center">
           <h1 className="text-2xl lg:text-4xl font-bold">Why Open Source ?</h1>
           <h1 className="text-sm lg:text-lg text-neutral-500 font-bold">
@@ -197,6 +222,17 @@ const Home = () => {
           </h1>
         </div>
         <Reasons REASONS={REASONS} />
+      </div>
+
+      {/* How it Works */}
+      <div className="w-full h-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 py-14 sm:py-18 md:py-25 lg:py-30 xl:py-40 flex flex-col items-center justify-between gap-12">
+        <div className="w-full flex flex-col items-center justify-center text-center">
+          <h1 className="text-2xl lg:text-4xl font-bold">How it works ?</h1>
+          <h1 className="text-sm lg:text-lg text-neutral-500 font-bold">
+            From zero to tracked in under five minutes.
+          </h1>
+        </div>
+        <HowItWorks STEPS={STEPS} />
       </div>
     </>
   );
