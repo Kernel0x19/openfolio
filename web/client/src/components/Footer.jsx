@@ -2,23 +2,31 @@ import React, { useContext } from "react";
 import { ViewContext } from "../context/ViewContext";
 import OpenFolioLogo from "../assets/OpenFolioLogo-1.png";
 import { ArrowUpRight } from "lucide-react";
-import GithubLight from '../assets/GithubLogo-light.svg'
-import GithubDark from '../assets/GithubLogo-dark.svg'
-import XIconDark from '../assets/XLogo.webp'
-import XIconLight from '../assets/XLogo-dark.png'
+import GithubLight from "../assets/GithubLogo-light.svg";
+import GithubDark from "../assets/GithubLogo-dark.svg";
+import XIconDark from "../assets/XLogo.webp";
+import XIconLight from "../assets/XLogo-dark.png";
 
 const footerLinks = {
   Product: [
     { label: "Features", href: "#features" },
     { label: "How It Works", href: "#how-it-works" },
-    { label: "Changelog", href: "#" },
-    { label: "Roadmap", href: "#" },
+    {
+      label: "Changelog",
+      href: "https://github.com/Kernel0x19/openfolio/blob/dev/CHANGELOG.md",
+      external: true,
+    },
+    {
+      label: "Roadmap",
+      href: "https://github.com/Kernel0x19/openfolio/blob/dev/ROADMAP.md",
+      external: true,
+    },
   ],
   Resources: [
     { label: "Documentation", href: "#" },
     {
       label: "Contributing",
-      href: "https://github.com/Kernel0x19/openfolio/blob/main/CONTRIBUTING.md",
+      href: "https://github.com/Kernel0x19/openfolio/blob/dev/CONTRIBUTING.md",
       external: true,
     },
     {
@@ -35,7 +43,7 @@ const footerLinks = {
   Legal: [
     {
       label: "GNU License",
-      href: "https://github.com/Kernel0x19/openfolio/blob/main/LICENSE",
+      href: "https://github.com/Kernel0x19/openfolio/blob/dev/LICENSE",
       external: true,
     },
     { label: "Privacy Policy", href: "#" },
@@ -94,7 +102,10 @@ const Footer = () => {
                 }`}
               aria-label="GitHub"
             >
-              <img src={darkMode ? GithubDark : GithubLight} className="w-4 h-4" />
+              <img
+                src={darkMode ? GithubDark : GithubLight}
+                className="w-4 h-4"
+              />
             </a>
             <a
               href="#"
@@ -106,7 +117,10 @@ const Footer = () => {
                 }`}
               aria-label="Twitter"
             >
-              <img src={darkMode ? XIconLight : XIconDark} className="w-4 h-4" />
+              <img
+                src={darkMode ? XIconLight : XIconDark}
+                className="w-4 h-4"
+              />
             </a>
           </div>
         </div>
@@ -149,7 +163,7 @@ const Footer = () => {
         >
           © 2025 OpenFolio · Open source under{" "}
           <a
-            href="https://github.com/Kernel0x19/openfolio/blob/main/LICENSE"
+            href="https://github.com/Kernel0x19/openfolio/blob/dev/LICENSE"
             target="_blank"
             rel="noopener noreferrer"
             className={`hover:underline transition-colors duration-300 ${dm ? "text-white/40" : "text-black/40"}`}

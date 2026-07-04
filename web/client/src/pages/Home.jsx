@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { ViewContext } from "../context/ViewContext";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import {
   Activity,
   BarChart3,

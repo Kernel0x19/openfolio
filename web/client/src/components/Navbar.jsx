@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import { ViewContext } from "../context/ViewContext";
 import OpenFolioLogo from "../assets/OpenFolioLogo-1.png";
 import { Moon, Sun, Menu, X } from "lucide-react";

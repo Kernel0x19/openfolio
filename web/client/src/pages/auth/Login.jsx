@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import { ViewContext } from "../../context/ViewContext";
 import OpenFolioLogo from "../../assets/OpenFolioLogo-1.png";
 import GithubLogo from "../../assets/GithubLogo-dark.svg";
