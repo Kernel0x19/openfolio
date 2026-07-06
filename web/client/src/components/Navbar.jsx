@@ -4,7 +4,13 @@ import { ViewContext } from "../context/ViewContext";
 import OpenFolioLogo from "../assets/OpenFolioLogo-1.png";
 import { Moon, Sun, Menu, X } from "lucide-react";
 
-const Navbar = ({ links = [], actions = null, mobileExtra = null, onLogoClick }) => {
+const Navbar = ({
+  links = [],
+  actions = null,
+  mobileExtra = null,
+  onLogoClick,
+  search = null,
+}) => {
   const { darkMode, setDarkMode } = useContext(ViewContext);
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -79,6 +85,7 @@ const Navbar = ({ links = [], actions = null, mobileExtra = null, onLogoClick })
           </div>
         )}
         <div className="hidden lg:flex items-center gap-3 xl:gap-4">
+          {search}
           {actions}
           <button
             className={`p-2 xl:p-4 hover:rounded-lg transition-all duration-500 cursor-pointer
@@ -150,6 +157,8 @@ const Navbar = ({ links = [], actions = null, mobileExtra = null, onLogoClick })
                 ))}
               </div>
             )}
+
+            {search && <div className="px-2 py-2">{search}</div>}
 
             {hasActions && (
               <div className="flex flex-col gap-2 pt-2 [&_button]:w-full [&_button]:justify-center">

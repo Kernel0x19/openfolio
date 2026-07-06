@@ -6,6 +6,7 @@ import MainLayout from "./layouts/MainLayout";
 import Login from "./pages/auth/Login";
 import SignUp from "./pages/auth/SignUp";
 import AuthLayout from "./layouts/AuthLayout";
+import NotFound from "./components/utils/NotFound";
 
 function App() {
   return (
@@ -36,6 +37,9 @@ function App() {
               </AuthLayout>
             }
           />
+
+          {/* Not Found Route */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </>

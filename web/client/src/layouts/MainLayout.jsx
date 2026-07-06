@@ -4,6 +4,7 @@ import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { ViewContext } from "../context/ViewContext";
 import { MoveRight } from "lucide-react";
+import SearchBar from "../components/SearchBar";
 
 const MainLayout = ({ children }) => {
   const { darkMode } = useContext(ViewContext);
@@ -63,7 +64,7 @@ const MainLayout = ({ children }) => {
           : "bg-secondaryBg text-secondaryTextColor"
       }`}
     >
-      <Navbar links={links} actions={actions} />
+      <Navbar links={links} actions={actions} search={<SearchBar />} />
       <main className="pt-32">{children}</main>
       <Footer />
     </div>
